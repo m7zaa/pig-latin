@@ -1,10 +1,9 @@
 
 var vowels = ["a", "e", "i", "o", "u"];
 var consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
-var returnArray = [];
 
 $(document).ready(function(){
-  $(".btn").submit(function(event){
+  $("#formOne").submit(function(event){
     event.preventDefault();
     var userInput= $("#userInput").val();
     console.log(userInput)
@@ -15,15 +14,16 @@ $(document).ready(function(){
         console.log(userInput + "way");
       }
     };
-      var inputArray = userInput.split("")
+    var inputArray = userInput.split("");
 
 
       for(var secondIndex = 0; secondIndex < inputArray.length; secondIndex++) {
         for(var thirdIndex = 0; thirdIndex < vowels.length; thirdIndex++) {
           if (inputArray[secondIndex] === vowels[thirdIndex]) {
             var removed = inputArray.splice(0, secondIndex);
-            console.log(removed)
-            return
+            console.log(inputArray);
+            inputArray = inputArray.concat(removed);
+            return console.log(inputArray);
            }
          }
       };
