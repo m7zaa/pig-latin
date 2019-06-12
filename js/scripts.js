@@ -16,6 +16,18 @@ $(document).ready(function(){
     };
     var inputArray = userInput.split("");
 
+    if (inputArray[0] === "q" && inputArray[1] === "u") {
+      var removed = inputArray.splice(0, 2);
+      inputArray = inputArray.concat(removed);
+      var output = inputArray.join("");
+      return console.log(output + "ay");
+    } else if (inputArray[1] === "q" && inputArray[2] === "u") {
+      var removed = inputArray.splice(0, 3);
+      console.log(removed);
+     inputArray = inputArray.concat(removed);
+     var output = inputArray.join("");
+     return console.log(output + "ay");
+    };
 
       for(var secondIndex = 0; secondIndex < inputArray.length; secondIndex++) {
         for(var thirdIndex = 0; thirdIndex < vowels.length; thirdIndex++) {
@@ -23,7 +35,8 @@ $(document).ready(function(){
             var removed = inputArray.splice(0, secondIndex);
             console.log(inputArray);
             inputArray = inputArray.concat(removed);
-            return console.log(inputArray);
+            var output = inputArray.join("");
+            return console.log(output + "ay");
            }
          }
       };
